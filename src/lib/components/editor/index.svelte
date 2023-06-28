@@ -1,7 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import { v4 as uuid } from "uuid";
-  import {mergeAttributes} from "@tiptap/core";
+  import { mergeAttributes } from "@tiptap/core";
   import { Editor } from "@tiptap/core";
   import StarterKit from "@tiptap/starter-kit";
   import Heading from "@tiptap/extension-heading";
@@ -9,6 +9,7 @@
   import TaskList from "@tiptap/extension-task-list";
   import TaskItem from "@tiptap/extension-task-item";
   import Link from "@tiptap/extension-link";
+  import Focus from "@tiptap/extension-focus";
   // import CustomImage from "../extensions/image.js"
   import Clickable from "../extensions/clickable.js";
 
@@ -89,6 +90,7 @@
         StarterKit.configure({
           heading: false,
         }),
+        Focus,
         Heading.extend({
           addAttributes() {
             return {
@@ -108,16 +110,20 @@
               },
             };
           },
-          parseHTML(){
-            return this.options.levels.map(level => ({
+          parseHTML() {
+            return this.options.levels.map((level) => ({
               tag: `h${level}`,
               attrs: {
                 level,
               },
-            }))
+            }));
           },
           renderHTML(x) {
-            return [`h${x.node.attrs.level}`, mergeAttributes(this.options.HTMLAttributes ,x.HTMLAttributes), 0];
+            return [
+              `h${x.node.attrs.level}`,
+              mergeAttributes(this.options.HTMLAttributes, x.HTMLAttributes),
+              0,
+            ];
           },
         }),
         Placeholder,
@@ -142,6 +148,18 @@
         $jsonContent = JSON.stringify(json);
       },
       onCreate: ({ editor }) => {
+        const lastChild = editor.state.doc.lastChild;
+        if (lastChild) {
+          const pos = editor.state.doc.content.size - lastChild.nodeSize;
+          const hasContent = lastChild.content.size > 0;
+          if (hasContent) {
+            //go to the end of the node text
+            editor.commands.focus(pos + lastChild.content.size + 1);
+          } else {
+            //go to the beginning of the node text
+            editor.commands.focus(pos);
+          }
+        }
         json = editor.getJSON();
         $jsonContent = JSON.stringify(json);
         html = editor.getHTML();

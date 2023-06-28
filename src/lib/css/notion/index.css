@@ -1,4 +1,5 @@
   h1, h2, h3, h4, h5, h6, p, ul, ol {
+    @apply py-1 px-2 rounded;
     width: 100%;
   }
 
@@ -10,70 +11,69 @@
 
   .notion-wrapper {
     @apply h-full; 
-  & .ProseMirror {
-      @apply  focus:outline-none 
-      h-full
-              p-8 
-      pb-[50%]
-      overflow-scroll
-              mx-auto
-              prose dark:prose-invert
-    ;
+    & .ProseMirror {
+        @apply  focus:outline-none h-full p-8 pb-[50%] overflow-scroll mx-auto prose dark:prose-invert ;
+    &::-webkit-scrollbar {
+        @apply hidden;
+      }
+      & .has-focus{
+        @apply bg-gray-200/20 dark:bg-gray-800/20;
 
-
-
-    & p.is-empty::before ,
-    & h1.is-empty::before,
-    & h2.is-empty::before,
-    & h3.is-empty::before,
-    & h4.is-empty::before,
-    & h5.is-empty::before,
-    & h6.is-empty::before {
-      @apply text-gray-400/80 float-left h-0;
-    }
-
-    & p.is-empty::before {
-      content: "Press `/` for commands...";
-  }
-    & h1.is-empty::before {
-      content: "Heading 1";
-    }
-    & h2.is-empty::before {
-      content: "Heading 2";
-    }
-    & h3.is-empty::before {
-      content: "Heading 3";
-    }
-    & h4.is-empty::before {
-      content: "Heading 4";
-    }
-    & h5.is-empty::before {
-      content: "Heading 5";
-    }
-    & h6.is-empty::before {
-      content: "Heading 6";
-    }
-    & ul[data-type="taskList"] {
-      @apply list-none pl-1;
-
-      & li {
-        @apply flex items-start;
-
-        & p {
-          @apply m-0 ml-4;
-        }
-
-        & label {
-          @apply pr-1;
-
-          & input {
-            @apply rounded border border-gray-300;
-          }
-        }
       }
 
+
+        & p.is-empty::before ,
+        & h1.is-empty::before,
+        & h2.is-empty::before,
+        & h3.is-empty::before,
+        & h4.is-empty::before,
+        & h5.is-empty::before,
+        & h6.is-empty::before {
+          @apply text-gray-400/80 float-left h-0;
+        }
+
+        & p.is-empty::before {
+          content: "Press `/` for commands...";
+      }
+        & h1.is-empty::before {
+          content: "Heading 1";
+        }
+        & h2.is-empty::before {
+          content: "Heading 2";
+        }
+        & h3.is-empty::before {
+          content: "Heading 3";
+        }
+        & h4.is-empty::before {
+          content: "Heading 4";
+        }
+        & h5.is-empty::before {
+          content: "Heading 5";
+        }
+        & h6.is-empty::before {
+          content: "Heading 6";
+        }
+        & ul[data-type="taskList"] {
+          @apply list-none pl-1;
+
+          & li {
+            @apply flex items-start;
+
+            & p {
+              @apply m-0 ml-4;
+            }
+
+            & label {
+              @apply pr-1;
+
+              & input {
+                @apply rounded border border-gray-300;
+              }
+            }
+          }
+
+        }
     }
-  }
   }
   .suggestion-overlay {
     @apply absolute h-screen top-0 w-screen left-0 z-[10000] bg-black bg-opacity-20 transition-opacity duration-300;

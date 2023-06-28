@@ -54,6 +54,7 @@
   "type": "module",
   "dependencies": {
     "@tiptap/core": "^2.0.3",
+    "@tiptap/extension-focus": "^2.0.3",
     "@tiptap/extension-heading": "^2.0.3",
     "@tiptap/extension-link": "^2.0.3",
     "@tiptap/extension-placeholder": "^2.0.3",
@@ -62,7 +63,6 @@
     "@tiptap/starter-kit": "^2.0.3",
     "@tiptap/suggestion": "^2.0.3",
     "svelte-tiptap": "^0.7.0",
-    "uuid": "^9.0.0",
-    "uuidv4": "^6.2.13"
+    "uuid": "^9.0.0"
   }
 }

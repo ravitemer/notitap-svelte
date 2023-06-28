@@ -16,7 +16,7 @@
       },
       {
         type: "heading",
-        attrs: { level: 1,id: "1" },
+        attrs: { level: 1, id: "1" },
         content: [
           {
             type: "text",
@@ -26,7 +26,7 @@
       },
       {
         type: "heading",
-        attrs: { level: 2 ,id:"2"},
+        attrs: { level: 2, id: "2" },
         content: [
           {
             type: "text",
@@ -36,7 +36,7 @@
       },
       {
         type: "heading",
-        attrs: { level: 3,id:"3" },
+        attrs: { level: 3, id: "3" },
         content: [
           {
             type: "text",

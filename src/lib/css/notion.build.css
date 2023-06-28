@@ -1,6 +1,11 @@
   h1, h2, h3, h4, h5, h6, p, ul, ol {
+    border-radius: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     width: 100%;
-  }
+}
 
   /* .svelte-renderer { */
 
@@ -505,45 +510,57 @@
     outline-offset: 2px;
 }
 
+  .notion-wrapper .ProseMirror::-webkit-scrollbar {
+    display: none;
+}
+
+  .notion-wrapper .ProseMirror .has-focus {
+    background-color: rgb(229 231 235 / 0.2);
+}
+
+  :is(.dark .notion-wrapper .ProseMirror .has-focus) {
+    background-color: rgb(31 41 55 / 0.2);
+}
+
   .notion-wrapper .ProseMirror p.is-empty::before,
-    .notion-wrapper .ProseMirror h1.is-empty::before,
-    .notion-wrapper .ProseMirror h2.is-empty::before,
-    .notion-wrapper .ProseMirror h3.is-empty::before,
-    .notion-wrapper .ProseMirror h4.is-empty::before,
-    .notion-wrapper .ProseMirror h5.is-empty::before,
-    .notion-wrapper .ProseMirror h6.is-empty::before {
+        .notion-wrapper .ProseMirror h1.is-empty::before,
+        .notion-wrapper .ProseMirror h2.is-empty::before,
+        .notion-wrapper .ProseMirror h3.is-empty::before,
+        .notion-wrapper .ProseMirror h4.is-empty::before,
+        .notion-wrapper .ProseMirror h5.is-empty::before,
+        .notion-wrapper .ProseMirror h6.is-empty::before {
     float: left;
     height: 0px;
     color: rgb(156 163 175 / 0.8);
 }
 
   .notion-wrapper .ProseMirror p.is-empty::before {
-      content: "Press `/` for commands...";
-  }
+          content: "Press `/` for commands...";
+      }
 
   .notion-wrapper .ProseMirror h1.is-empty::before {
-      content: "Heading 1";
-    }
+          content: "Heading 1";
+        }
 
   .notion-wrapper .ProseMirror h2.is-empty::before {
-      content: "Heading 2";
-    }
+          content: "Heading 2";
+        }
 
   .notion-wrapper .ProseMirror h3.is-empty::before {
-      content: "Heading 3";
-    }
+          content: "Heading 3";
+        }
 
   .notion-wrapper .ProseMirror h4.is-empty::before {
-      content: "Heading 4";
-    }
+          content: "Heading 4";
+        }
 
   .notion-wrapper .ProseMirror h5.is-empty::before {
-      content: "Heading 5";
-    }
+          content: "Heading 5";
+        }
 
   .notion-wrapper .ProseMirror h6.is-empty::before {
-      content: "Heading 6";
-    }
+          content: "Heading 6";
+        }
 
   .notion-wrapper .ProseMirror ul[data-type="taskList"] {
     list-style-type: none;
