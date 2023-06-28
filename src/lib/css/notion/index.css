@@ -1,0 +1,116 @@
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
+    width: 100%;
+  }
+
+  /* .svelte-renderer { */
+  /*   @apply h-full; */
+  /* } */
+
+ /* notion class is required to avoid tiptap's css  */
+
+  .notion-wrapper {
+    @apply h-full; 
+  & .ProseMirror {
+      @apply  focus:outline-none 
+      h-full
+              p-8 
+      pb-[50%]
+      overflow-scroll
+              mx-auto
+              prose dark:prose-invert
+    ;
+
+
+
+    & p.is-empty::before ,
+    & h1.is-empty::before,
+    & h2.is-empty::before,
+    & h3.is-empty::before,
+    & h4.is-empty::before,
+    & h5.is-empty::before,
+    & h6.is-empty::before {
+      @apply text-gray-400/80 float-left h-0;
+    }
+
+    & p.is-empty::before {
+      content: "Press `/` for commands...";
+  }
+    & h1.is-empty::before {
+      content: "Heading 1";
+    }
+    & h2.is-empty::before {
+      content: "Heading 2";
+    }
+    & h3.is-empty::before {
+      content: "Heading 3";
+    }
+    & h4.is-empty::before {
+      content: "Heading 4";
+    }
+    & h5.is-empty::before {
+      content: "Heading 5";
+    }
+    & h6.is-empty::before {
+      content: "Heading 6";
+    }
+    & ul[data-type="taskList"] {
+      @apply list-none pl-1;
+
+      & li {
+        @apply flex items-start;
+
+        & p {
+          @apply m-0 ml-4;
+        }
+
+        & label {
+          @apply pr-1;
+
+          & input {
+            @apply rounded border border-gray-300;
+          }
+        }
+      }
+
+    }
+  }
+  }
+  .suggestion-overlay {
+    @apply absolute h-screen top-0 w-screen left-0 z-[10000] bg-black bg-opacity-20 transition-opacity duration-300;
+  }
+  .suggestion-container {
+    @apply p-2 p-2 absolute shadow-xl w-80 max-h-[50%] max-w-full z-[20000] rounded-lg overflow-scroll border border-gray-400 dark:border-gray-800 bg-white text-black dark:bg-gray-900 dark:text-white;
+    &::-webkit-scrollbar {
+      @apply w-1;
+    }
+    & .header {
+      @apply p-2 text-sm uppercase font-bold text-slate-500 dark:text-slate-400;
+    }
+    & .slash-list {
+      @apply flex flex-col items-center;
+
+      & .slash-item {
+        @apply flex items-center gap-2 rounded p-2 cursor-pointer w-full;
+
+        & .slash-left {
+          @apply overflow-hidden;
+          & .slash-img {
+            @apply w-12 object-cover h-full shadow mr-2 shrink-0 rounded grow-0 bg-white; 
+          }
+        }
+        & .slash-right {
+          @apply grow flex flex-col justify-center;
+          & .slash-title {
+            @apply font-medium;
+          }
+          & .slash-subtitle {
+            @apply text-xs text-slate-500 dark:text-slate-400;
+          }
+        }
+        
+      }
+      & .slash-item.active {
+        @apply bg-gray-200 dark:bg-gray-800 shadow;
+      }
+    }
+  }

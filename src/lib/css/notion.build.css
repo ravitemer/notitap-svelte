@@ -1,0 +1,707 @@
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
+    width: 100%;
+  }
+
+  /* .svelte-renderer { */
+
+  /*   @apply h-full; */
+
+  /* } */
+
+  /* notion class is required to avoid tiptap's css  */
+
+  .notion-wrapper {
+    height: 100%;
+}
+
+  .notion-wrapper .ProseMirror {
+    color: var(--tw-prose-body);
+    max-width: 65ch;
+}
+
+  .notion-wrapper .ProseMirror :where(p):not(:where([class~="not-prose"] *)) {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+  .notion-wrapper .ProseMirror :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-lead);
+    font-size: 1.25em;
+    line-height: 1.6;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+  .notion-wrapper .ProseMirror :where(a):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-links);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+  .notion-wrapper .ProseMirror :where(strong):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-bold);
+    font-weight: 600;
+}
+
+  .notion-wrapper .ProseMirror :where(a strong):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(blockquote strong):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(thead th strong):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(ol):not(:where([class~="not-prose"] *)) {
+    list-style-type: decimal;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="A"]):not(:where([class~="not-prose"] *)) {
+    list-style-type: upper-alpha;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="a"]):not(:where([class~="not-prose"] *)) {
+    list-style-type: lower-alpha;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="A" s]):not(:where([class~="not-prose"] *)) {
+    list-style-type: upper-alpha;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="a" s]):not(:where([class~="not-prose"] *)) {
+    list-style-type: lower-alpha;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="I"]):not(:where([class~="not-prose"] *)) {
+    list-style-type: upper-roman;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="i"]):not(:where([class~="not-prose"] *)) {
+    list-style-type: lower-roman;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="I" s]):not(:where([class~="not-prose"] *)) {
+    list-style-type: upper-roman;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="i" s]):not(:where([class~="not-prose"] *)) {
+    list-style-type: lower-roman;
+}
+
+  .notion-wrapper .ProseMirror :where(ol[type="1"]):not(:where([class~="not-prose"] *)) {
+    list-style-type: decimal;
+}
+
+  .notion-wrapper .ProseMirror :where(ul):not(:where([class~="not-prose"] *)) {
+    list-style-type: disc;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+  .notion-wrapper .ProseMirror :where(ol > li):not(:where([class~="not-prose"] *))::marker {
+    font-weight: 400;
+    color: var(--tw-prose-counters);
+}
+
+  .notion-wrapper .ProseMirror :where(ul > li):not(:where([class~="not-prose"] *))::marker {
+    color: var(--tw-prose-bullets);
+}
+
+  .notion-wrapper .ProseMirror :where(hr):not(:where([class~="not-prose"] *)) {
+    border-color: var(--tw-prose-hr);
+    border-top-width: 1px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+  .notion-wrapper .ProseMirror :where(blockquote):not(:where([class~="not-prose"] *)) {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--tw-prose-quotes);
+    border-left-width: 0.25rem;
+    border-left-color: var(--tw-prose-quote-borders);
+    quotes: "\201C""\201D""\2018""\2019";
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    padding-left: 1em;
+}
+
+  .notion-wrapper .ProseMirror :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before {
+    content: open-quote;
+}
+
+  .notion-wrapper .ProseMirror :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
+    content: close-quote;
+}
+
+  .notion-wrapper .ProseMirror :where(h1):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-headings);
+    font-weight: 800;
+    font-size: 2.25em;
+    margin-top: 0;
+    margin-bottom: 0.8888889em;
+    line-height: 1.1111111;
+}
+
+  .notion-wrapper .ProseMirror :where(h1 strong):not(:where([class~="not-prose"] *)) {
+    font-weight: 900;
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(h2):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-headings);
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+}
+
+  .notion-wrapper .ProseMirror :where(h2 strong):not(:where([class~="not-prose"] *)) {
+    font-weight: 800;
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(h3):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-headings);
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+}
+
+  .notion-wrapper .ProseMirror :where(h3 strong):not(:where([class~="not-prose"] *)) {
+    font-weight: 700;
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(h4):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-headings);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+}
+
+  .notion-wrapper .ProseMirror :where(h4 strong):not(:where([class~="not-prose"] *)) {
+    font-weight: 700;
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(img):not(:where([class~="not-prose"] *)) {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+  .notion-wrapper .ProseMirror :where(figure > *):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(figcaption):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-captions);
+    font-size: 0.875em;
+    line-height: 1.4285714;
+    margin-top: 0.8571429em;
+}
+
+  .notion-wrapper .ProseMirror :where(code):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-code);
+    font-weight: 600;
+    font-size: 0.875em;
+}
+
+  .notion-wrapper .ProseMirror :where(code):not(:where([class~="not-prose"] *))::before {
+    content: "`";
+}
+
+  .notion-wrapper .ProseMirror :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "`";
+}
+
+  .notion-wrapper .ProseMirror :where(a code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(h1 code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(h2 code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+    font-size: 0.875em;
+}
+
+  .notion-wrapper .ProseMirror :where(h3 code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+    font-size: 0.9em;
+}
+
+  .notion-wrapper .ProseMirror :where(h4 code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(blockquote code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(thead th code):not(:where([class~="not-prose"] *)) {
+    color: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(pre):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-pre-code);
+    background-color: var(--tw-prose-pre-bg);
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    margin-top: 1.7142857em;
+    margin-bottom: 1.7142857em;
+    border-radius: 0.375rem;
+    padding-top: 0.8571429em;
+    padding-right: 1.1428571em;
+    padding-bottom: 0.8571429em;
+    padding-left: 1.1428571em;
+}
+
+  .notion-wrapper .ProseMirror :where(pre code):not(:where([class~="not-prose"] *)) {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+  .notion-wrapper .ProseMirror :where(pre code):not(:where([class~="not-prose"] *))::before {
+    content: none;
+}
+
+  .notion-wrapper .ProseMirror :where(pre code):not(:where([class~="not-prose"] *))::after {
+    content: none;
+}
+
+  .notion-wrapper .ProseMirror :where(table):not(:where([class~="not-prose"] *)) {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+}
+
+  .notion-wrapper .ProseMirror :where(thead):not(:where([class~="not-prose"] *)) {
+    border-bottom-width: 1px;
+    border-bottom-color: var(--tw-prose-th-borders);
+}
+
+  .notion-wrapper .ProseMirror :where(thead th):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-headings);
+    font-weight: 600;
+    vertical-align: bottom;
+    padding-right: 0.5714286em;
+    padding-bottom: 0.5714286em;
+    padding-left: 0.5714286em;
+}
+
+  .notion-wrapper .ProseMirror :where(tbody tr):not(:where([class~="not-prose"] *)) {
+    border-bottom-width: 1px;
+    border-bottom-color: var(--tw-prose-td-borders);
+}
+
+  .notion-wrapper .ProseMirror :where(tbody tr:last-child):not(:where([class~="not-prose"] *)) {
+    border-bottom-width: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(tbody td):not(:where([class~="not-prose"] *)) {
+    vertical-align: baseline;
+}
+
+  .notion-wrapper .ProseMirror :where(tfoot):not(:where([class~="not-prose"] *)) {
+    border-top-width: 1px;
+    border-top-color: var(--tw-prose-th-borders);
+}
+
+  .notion-wrapper .ProseMirror :where(tfoot td):not(:where([class~="not-prose"] *)) {
+    vertical-align: top;
+}
+
+  .notion-wrapper .ProseMirror {
+    --tw-prose-body: #374151;
+    --tw-prose-headings: #111827;
+    --tw-prose-lead: #4b5563;
+    --tw-prose-links: #111827;
+    --tw-prose-bold: #111827;
+    --tw-prose-counters: #6b7280;
+    --tw-prose-bullets: #d1d5db;
+    --tw-prose-hr: #e5e7eb;
+    --tw-prose-quotes: #111827;
+    --tw-prose-quote-borders: #e5e7eb;
+    --tw-prose-captions: #6b7280;
+    --tw-prose-code: #111827;
+    --tw-prose-pre-code: #e5e7eb;
+    --tw-prose-pre-bg: #1f2937;
+    --tw-prose-th-borders: #d1d5db;
+    --tw-prose-td-borders: #e5e7eb;
+    --tw-prose-invert-body: #d1d5db;
+    --tw-prose-invert-headings: #fff;
+    --tw-prose-invert-lead: #9ca3af;
+    --tw-prose-invert-links: #fff;
+    --tw-prose-invert-bold: #fff;
+    --tw-prose-invert-counters: #9ca3af;
+    --tw-prose-invert-bullets: #4b5563;
+    --tw-prose-invert-hr: #374151;
+    --tw-prose-invert-quotes: #f3f4f6;
+    --tw-prose-invert-quote-borders: #374151;
+    --tw-prose-invert-captions: #9ca3af;
+    --tw-prose-invert-code: #fff;
+    --tw-prose-invert-pre-code: #d1d5db;
+    --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+    --tw-prose-invert-th-borders: #4b5563;
+    --tw-prose-invert-td-borders: #374151;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+  .notion-wrapper .ProseMirror :where(video):not(:where([class~="not-prose"] *)) {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+  .notion-wrapper .ProseMirror :where(figure):not(:where([class~="not-prose"] *)) {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+  .notion-wrapper .ProseMirror :where(li):not(:where([class~="not-prose"] *)) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+  .notion-wrapper .ProseMirror :where(ol > li):not(:where([class~="not-prose"] *)) {
+    padding-left: 0.375em;
+}
+
+  .notion-wrapper .ProseMirror :where(ul > li):not(:where([class~="not-prose"] *)) {
+    padding-left: 0.375em;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > ul > li p):not(:where([class~="not-prose"] *)) {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > ul > li > *:first-child):not(:where([class~="not-prose"] *)) {
+    margin-top: 1.25em;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > ul > li > *:last-child):not(:where([class~="not-prose"] *)) {
+    margin-bottom: 1.25em;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > ol > li > *:first-child):not(:where([class~="not-prose"] *)) {
+    margin-top: 1.25em;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > ol > li > *:last-child):not(:where([class~="not-prose"] *)) {
+    margin-bottom: 1.25em;
+}
+
+  .notion-wrapper .ProseMirror :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+  .notion-wrapper .ProseMirror :where(hr + *):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(h2 + *):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(h3 + *):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(h4 + *):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(thead th:first-child):not(:where([class~="not-prose"] *)) {
+    padding-left: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(thead th:last-child):not(:where([class~="not-prose"] *)) {
+    padding-right: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(tbody td, tfoot td):not(:where([class~="not-prose"] *)) {
+    padding-top: 0.5714286em;
+    padding-right: 0.5714286em;
+    padding-bottom: 0.5714286em;
+    padding-left: 0.5714286em;
+}
+
+  .notion-wrapper .ProseMirror :where(tbody td:first-child, tfoot td:first-child):not(:where([class~="not-prose"] *)) {
+    padding-left: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(tbody td:last-child, tfoot td:last-child):not(:where([class~="not-prose"] *)) {
+    padding-right: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > :first-child):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+}
+
+  .notion-wrapper .ProseMirror :where(.prose > :last-child):not(:where([class~="not-prose"] *)) {
+    margin-bottom: 0;
+}
+
+  .notion-wrapper .ProseMirror {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    overflow: scroll;
+    padding: 2rem;
+    padding-bottom: 50%;
+}
+
+  :is(.dark .notion-wrapper .ProseMirror) {
+    --tw-prose-body: var(--tw-prose-invert-body);
+    --tw-prose-headings: var(--tw-prose-invert-headings);
+    --tw-prose-lead: var(--tw-prose-invert-lead);
+    --tw-prose-links: var(--tw-prose-invert-links);
+    --tw-prose-bold: var(--tw-prose-invert-bold);
+    --tw-prose-counters: var(--tw-prose-invert-counters);
+    --tw-prose-bullets: var(--tw-prose-invert-bullets);
+    --tw-prose-hr: var(--tw-prose-invert-hr);
+    --tw-prose-quotes: var(--tw-prose-invert-quotes);
+    --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+    --tw-prose-captions: var(--tw-prose-invert-captions);
+    --tw-prose-code: var(--tw-prose-invert-code);
+    --tw-prose-pre-code: var(--tw-prose-invert-pre-code);
+    --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+    --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+    --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+}
+
+  .notion-wrapper .ProseMirror:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+  .notion-wrapper .ProseMirror p.is-empty::before,
+    .notion-wrapper .ProseMirror h1.is-empty::before,
+    .notion-wrapper .ProseMirror h2.is-empty::before,
+    .notion-wrapper .ProseMirror h3.is-empty::before,
+    .notion-wrapper .ProseMirror h4.is-empty::before,
+    .notion-wrapper .ProseMirror h5.is-empty::before,
+    .notion-wrapper .ProseMirror h6.is-empty::before {
+    float: left;
+    height: 0px;
+    color: rgb(156 163 175 / 0.8);
+}
+
+  .notion-wrapper .ProseMirror p.is-empty::before {
+      content: "Press `/` for commands...";
+  }
+
+  .notion-wrapper .ProseMirror h1.is-empty::before {
+      content: "Heading 1";
+    }
+
+  .notion-wrapper .ProseMirror h2.is-empty::before {
+      content: "Heading 2";
+    }
+
+  .notion-wrapper .ProseMirror h3.is-empty::before {
+      content: "Heading 3";
+    }
+
+  .notion-wrapper .ProseMirror h4.is-empty::before {
+      content: "Heading 4";
+    }
+
+  .notion-wrapper .ProseMirror h5.is-empty::before {
+      content: "Heading 5";
+    }
+
+  .notion-wrapper .ProseMirror h6.is-empty::before {
+      content: "Heading 6";
+    }
+
+  .notion-wrapper .ProseMirror ul[data-type="taskList"] {
+    list-style-type: none;
+    padding-left: 0.25rem;
+}
+
+  .notion-wrapper .ProseMirror ul[data-type="taskList"] li {
+    display: flex;
+    align-items: flex-start;
+}
+
+  .notion-wrapper .ProseMirror ul[data-type="taskList"] li p {
+    margin: 0px;
+    margin-left: 1rem;
+}
+
+  .notion-wrapper .ProseMirror ul[data-type="taskList"] li label {
+    padding-right: 0.25rem;
+}
+
+  .notion-wrapper .ProseMirror ul[data-type="taskList"] li label input {
+    border-radius: 0.25rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+  .suggestion-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.2;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+  .suggestion-container {
+    position: absolute;
+    z-index: 20000;
+    max-height: 50%;
+    width: 20rem;
+    max-width: 100%;
+    overflow: scroll;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+  :is(.dark .suggestion-container) {
+    --tw-border-opacity: 1;
+    border-color: rgb(31 41 55 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+  .suggestion-container::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+  .suggestion-container .header {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    --tw-text-opacity: 1;
+    color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+  :is(.dark .suggestion-container .header) {
+    --tw-text-opacity: 1;
+    color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+  .suggestion-container .slash-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .suggestion-container .slash-list .slash-item {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+  .suggestion-container .slash-list .slash-item .slash-left {
+    overflow: hidden;
+}
+
+  .suggestion-container .slash-list .slash-item .slash-left .slash-img {
+    margin-right: 0.5rem;
+    height: 100%;
+    width: 3rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    -o-object-fit: cover;
+       object-fit: cover;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+  .suggestion-container .slash-list .slash-item .slash-right {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+  .suggestion-container .slash-list .slash-item .slash-right .slash-title {
+    font-weight: 500;
+}
+
+  .suggestion-container .slash-list .slash-item .slash-right .slash-subtitle {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+  :is(.dark .suggestion-container .slash-list .slash-item .slash-right .slash-subtitle) {
+    --tw-text-opacity: 1;
+    color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+  .suggestion-container .slash-list .slash-item.active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+  :is(.dark .suggestion-container .slash-list .slash-item.active) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}

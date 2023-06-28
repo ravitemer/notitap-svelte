@@ -1,0 +1,19 @@
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  html,body  {
+    @apply h-screen fixed w-screen overflow-hidden dark:bg-black dark:text-white;
+  }
+  body {
+    /* Root */
+    & > div {
+      @apply h-full overflow-hidden;
+
+      /* Layout main */
+      & main {
+        @apply  h-full overflow-hidden;
+        
+      }
+    }
+  }
